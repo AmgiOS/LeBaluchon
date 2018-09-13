@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991CCA7E21468D3A006CC331 /* Device Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CCA7D21468D3A006CC331 /* Device Struct.swift */; };
+		991CCA8021468D5A006CC331 /* TranslateStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CCA7F21468D5A006CC331 /* TranslateStruct.swift */; };
+		992499FA213D3BB000BA4385 /* Projet9TestsCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992499F9213D3BB000BA4385 /* Projet9TestsCase.swift */; };
+		996274362138A751003C25DA /* MeteoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996274352138A751003C25DA /* MeteoService.swift */; };
+		996274382138B5A1003C25DA /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996274372138B5A1003C25DA /* TranslateService.swift */; };
 		999C9BAE212E271A00E302CF /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C9BAD212E271A00E302CF /* ExchangeViewController.swift */; };
 		999C9BB0212E275200E302CF /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C9BAF212E275200E302CF /* TranslateViewController.swift */; };
 		999C9BB2212E276900E302CF /* MeteoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C9BB1212E276900E302CF /* MeteoViewController.swift */; };
@@ -14,11 +19,30 @@
 		99E0EA19212C640B00EB8CA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E0EA17212C640B00EB8CA2 /* Main.storyboard */; };
 		99E0EA1B212C640C00EB8CA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E0EA1A212C640C00EB8CA2 /* Assets.xcassets */; };
 		99E0EA1E212C640C00EB8CA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E0EA1C212C640C00EB8CA2 /* LaunchScreen.storyboard */; };
+		99F27E292135F9D800D56DBD /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F27E282135F9D800D56DBD /* DeviceService.swift */; };
+		99F27E2B2135FAC400D56DBD /* MeteoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F27E2A2135FAC400D56DBD /* MeteoStruct.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		992499FC213D3BB000BA4385 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99E0EA08212C640B00EB8CA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99E0EA0F212C640B00EB8CA2;
+			remoteInfo = "Projet 9";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		991CCA7D21468D3A006CC331 /* Device Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device Struct.swift"; sourceTree = "<group>"; };
+		991CCA7F21468D5A006CC331 /* TranslateStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateStruct.swift; sourceTree = "<group>"; };
+		992499F7213D3BB000BA4385 /* Projet9TestsCase.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Projet9TestsCase.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		992499F9213D3BB000BA4385 /* Projet9TestsCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet9TestsCase.swift; sourceTree = "<group>"; };
+		992499FB213D3BB000BA4385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		996274352138A751003C25DA /* MeteoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoService.swift; sourceTree = "<group>"; };
+		996274372138B5A1003C25DA /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
 		999C9BAD212E271A00E302CF /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExchangeViewController.swift; path = "Projet 9/Controller/ExchangeViewController.swift"; sourceTree = SOURCE_ROOT; };
-		999C9BAF212E275200E302CF /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		999C9BAF212E275200E302CF /* TranslateViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		999C9BB1212E276900E302CF /* MeteoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoViewController.swift; sourceTree = "<group>"; };
 		99E0EA10212C640B00EB8CA2 /* Projet 9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Projet 9.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E0EA13212C640B00EB8CA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -26,9 +50,18 @@
 		99E0EA1A212C640C00EB8CA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99E0EA1D212C640C00EB8CA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99E0EA1F212C640C00EB8CA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99F27E282135F9D800D56DBD /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
+		99F27E2A2135FAC400D56DBD /* MeteoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		992499F4213D3BB000BA4385 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99E0EA0D212C640B00EB8CA2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +72,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		992499F8213D3BB000BA4385 /* Projet9TestsCase */ = {
+			isa = PBXGroup;
+			children = (
+				992499F9213D3BB000BA4385 /* Projet9TestsCase.swift */,
+				992499FB213D3BB000BA4385 /* Info.plist */,
+			);
+			path = Projet9TestsCase;
+			sourceTree = "<group>";
+		};
 		99E0EA07212C640B00EB8CA2 = {
 			isa = PBXGroup;
 			children = (
 				99E0EA12212C640B00EB8CA2 /* Projet 9 */,
+				992499F8213D3BB000BA4385 /* Projet9TestsCase */,
 				99E0EA11212C640B00EB8CA2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				99E0EA10212C640B00EB8CA2 /* Projet 9.app */,
+				992499F7213D3BB000BA4385 /* Projet9TestsCase.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +102,7 @@
 		99E0EA12212C640B00EB8CA2 /* Projet 9 */ = {
 			isa = PBXGroup;
 			children = (
-				99E0EA13212C640B00EB8CA2 /* AppDelegate.swift */,
-				99E0EA1F212C640C00EB8CA2 /* Info.plist */,
+				99F0A59E2133EA3900F3BAB9 /* Supporting Files */,
 				99E0EA27212C643C00EB8CA2 /* Model */,
 				99E0EA26212C642900EB8CA2 /* View */,
 				99E0EA25212C641F00EB8CA2 /* Controller */,
@@ -70,9 +113,9 @@
 		99E0EA25212C641F00EB8CA2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				999C9BB1212E276900E302CF /* MeteoViewController.swift */,
-				999C9BAF212E275200E302CF /* TranslateViewController.swift */,
 				999C9BAD212E271A00E302CF /* ExchangeViewController.swift */,
+				999C9BAF212E275200E302CF /* TranslateViewController.swift */,
+				999C9BB1212E276900E302CF /* MeteoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -82,7 +125,6 @@
 			children = (
 				99E0EA17212C640B00EB8CA2 /* Main.storyboard */,
 				99E0EA1C212C640C00EB8CA2 /* LaunchScreen.storyboard */,
-				99E0EA1A212C640C00EB8CA2 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,13 +132,47 @@
 		99E0EA27212C643C00EB8CA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				99F27E282135F9D800D56DBD /* DeviceService.swift */,
+				991CCA7D21468D3A006CC331 /* Device Struct.swift */,
+				996274372138B5A1003C25DA /* TranslateService.swift */,
+				991CCA7F21468D5A006CC331 /* TranslateStruct.swift */,
+				996274352138A751003C25DA /* MeteoService.swift */,
+				99F27E2A2135FAC400D56DBD /* MeteoStruct.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		99F0A59E2133EA3900F3BAB9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				99E0EA1A212C640C00EB8CA2 /* Assets.xcassets */,
+				99E0EA1F212C640C00EB8CA2 /* Info.plist */,
+				99E0EA13212C640B00EB8CA2 /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		992499F6213D3BB000BA4385 /* Projet9TestsCase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 992499FE213D3BB000BA4385 /* Build configuration list for PBXNativeTarget "Projet9TestsCase" */;
+			buildPhases = (
+				992499F3213D3BB000BA4385 /* Sources */,
+				992499F4213D3BB000BA4385 /* Frameworks */,
+				992499F5213D3BB000BA4385 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				992499FD213D3BB000BA4385 /* PBXTargetDependency */,
+			);
+			name = Projet9TestsCase;
+			productName = Projet9TestsCase;
+			productReference = 992499F7213D3BB000BA4385 /* Projet9TestsCase.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		99E0EA0F212C640B00EB8CA2 /* Projet 9 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99E0EA22212C640C00EB8CA2 /* Build configuration list for PBXNativeTarget "Projet 9" */;
@@ -124,6 +200,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Amg-Industries";
 				TargetAttributes = {
+					992499F6213D3BB000BA4385 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 99E0EA0F212C640B00EB8CA2;
+					};
 					99E0EA0F212C640B00EB8CA2 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -143,11 +223,19 @@
 			projectRoot = "";
 			targets = (
 				99E0EA0F212C640B00EB8CA2 /* Projet 9 */,
+				992499F6213D3BB000BA4385 /* Projet9TestsCase */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		992499F5213D3BB000BA4385 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99E0EA0E212C640B00EB8CA2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,18 +249,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		992499F3213D3BB000BA4385 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				992499FA213D3BB000BA4385 /* Projet9TestsCase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99E0EA0C212C640B00EB8CA2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				996274382138B5A1003C25DA /* TranslateService.swift in Sources */,
 				99E0EA14212C640B00EB8CA2 /* AppDelegate.swift in Sources */,
 				999C9BB2212E276900E302CF /* MeteoViewController.swift in Sources */,
 				999C9BAE212E271A00E302CF /* ExchangeViewController.swift in Sources */,
+				99F27E2B2135FAC400D56DBD /* MeteoStruct.swift in Sources */,
 				999C9BB0212E275200E302CF /* TranslateViewController.swift in Sources */,
+				99F27E292135F9D800D56DBD /* DeviceService.swift in Sources */,
+				991CCA8021468D5A006CC331 /* TranslateStruct.swift in Sources */,
+				991CCA7E21468D3A006CC331 /* Device Struct.swift in Sources */,
+				996274362138A751003C25DA /* MeteoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		992499FD213D3BB000BA4385 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 99E0EA0F212C640B00EB8CA2 /* Projet 9 */;
+			targetProxy = 992499FC213D3BB000BA4385 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		99E0EA17212C640B00EB8CA2 /* Main.storyboard */ = {
@@ -194,6 +304,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		992499FF213D3BB000BA4385 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9G9YW479WH;
+				INFOPLIST_FILE = Projet9TestsCase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.amgindustries.Projet9TestsCase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Projet 9.app/Projet 9";
+			};
+			name = Debug;
+		};
+		99249A00213D3BB000BA4385 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9G9YW479WH;
+				INFOPLIST_FILE = Projet9TestsCase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.amgindustries.Projet9TestsCase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Projet 9.app/Projet 9";
+			};
+			name = Release;
+		};
 		99E0EA20212C640C00EB8CA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -314,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9G9YW479WH;
-				INFOPLIST_FILE = "Projet 9/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Projet 9/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,7 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.amgindustries.Projet-9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -332,7 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9G9YW479WH;
-				INFOPLIST_FILE = "Projet 9/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Projet 9/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,13 +490,22 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.amgindustries.Projet-9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		992499FE213D3BB000BA4385 /* Build configuration list for PBXNativeTarget "Projet9TestsCase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				992499FF213D3BB000BA4385 /* Debug */,
+				99249A00213D3BB000BA4385 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		99E0EA0B212C640B00EB8CA2 /* Build configuration list for PBXProject "Projet 9" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
