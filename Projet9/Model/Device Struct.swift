@@ -10,7 +10,7 @@ import Foundation
 
 struct Device: Decodable {
     var base: String
-    var rates: [String: Float]
+    var rates: [String: Double]
 }
 
 struct Symbols: Decodable {

@@ -68,7 +68,7 @@ extension ExchangeViewController {
         for (key, value) in device.rates {
             displayDeviceTextView.text.append(contentsOf: "\(key):\(value)\n")
             if String(viewSymbols[inChangePickerView.selectedRow(inComponent: 0)]) == key {
-                guard let float = Float(text) else {return}
+                guard let float = Double(text) else {return}
                 let result = float * value
                 resultLabel.text = "\(result)"
             }

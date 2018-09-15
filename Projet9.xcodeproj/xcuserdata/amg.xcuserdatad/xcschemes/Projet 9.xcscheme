@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "99E0EA0F212C640B00EB8CA2"
-               BuildableName = "Projet 9.app"
-               BlueprintName = "Projet 9"
-               ReferencedContainer = "container:Projet 9.xcodeproj">
+               BuildableName = "Projet9.app"
+               BlueprintName = "Projet9"
+               ReferencedContainer = "container:Projet9.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -35,7 +36,7 @@
                BlueprintIdentifier = "992499F6213D3BB000BA4385"
                BuildableName = "Projet9TestsCase.xctest"
                BlueprintName = "Projet9TestsCase"
-               ReferencedContainer = "container:Projet 9.xcodeproj">
+               ReferencedContainer = "container:Projet9.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "99E0EA0F212C640B00EB8CA2"
-            BuildableName = "Projet 9.app"
-            BlueprintName = "Projet 9"
-            ReferencedContainer = "container:Projet 9.xcodeproj">
+            BuildableName = "Projet9.app"
+            BlueprintName = "Projet9"
+            ReferencedContainer = "container:Projet9.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "99E0EA0F212C640B00EB8CA2"
-            BuildableName = "Projet 9.app"
-            BlueprintName = "Projet 9"
-            ReferencedContainer = "container:Projet 9.xcodeproj">
+            BuildableName = "Projet9.app"
+            BlueprintName = "Projet9"
+            ReferencedContainer = "container:Projet9.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +86,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "99E0EA0F212C640B00EB8CA2"
-            BuildableName = "Projet 9.app"
-            BlueprintName = "Projet 9"
-            ReferencedContainer = "container:Projet 9.xcodeproj">
+            BuildableName = "Projet9.app"
+            BlueprintName = "Projet9"
+            ReferencedContainer = "container:Projet9.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
