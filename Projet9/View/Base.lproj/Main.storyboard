@@ -105,52 +105,126 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Country:" translatesAutoresizingMaskIntoConstraints="NO" id="V1W-JI-qmO">
-                                <rect key="frame" x="0.0" y="64" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardAppearance="alert"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="ofv-X1-4he" id="b5H-81-t7S"/>
-                                </connections>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mdX-Im-Z1P">
-                                <rect key="frame" x="0.0" y="120" width="414" height="567"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mdX-Im-Z1P">
+                                <rect key="frame" x="0.0" y="136" width="414" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.40982221300273336" green="0.40784239554861385" blue="0.41180203045685282" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="testCell" id="5Vn-3t-Gvk">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meteoCell" rowHeight="90" id="5Vn-3t-Gvk" customClass="MeteoViewCell" customModule="Projet9" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Vn-3t-Gvk" id="OIq-dW-Yop">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A0Z-S9-NKy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="98" height="89.666666666666671"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pE3-fe-qdr">
+                                                    <rect key="frame" x="103" y="0.0" width="311" height="37.666666666666664"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="22°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZt-oV-pQd">
+                                                    <rect key="frame" x="379" y="63.666666666666664" width="35" height="26.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrG-9D-lc5">
+                                                    <rect key="frame" x="103" y="42.666666666666664" width="306" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhC-ES-kGb">
+                                                    <rect key="frame" x="103" y="68.666666666666671" width="271" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="A0Z-S9-NKy" firstAttribute="leading" secondItem="OIq-dW-Yop" secondAttribute="leading" id="4yX-bQ-rFQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="kZt-oV-pQd" secondAttribute="bottom" constant="-0.33000000000000002" id="GGk-EJ-3fP"/>
+                                                <constraint firstAttribute="trailing" secondItem="pE3-fe-qdr" secondAttribute="trailing" id="Nmy-bR-kRV"/>
+                                                <constraint firstAttribute="trailing" secondItem="A0Z-S9-NKy" secondAttribute="trailing" constant="316" id="eC4-Pr-PRw"/>
+                                                <constraint firstItem="PhC-ES-kGb" firstAttribute="top" secondItem="FrG-9D-lc5" secondAttribute="bottom" constant="5" id="fDo-ga-pXL"/>
+                                                <constraint firstAttribute="trailing" secondItem="pE3-fe-qdr" secondAttribute="trailing" id="gpQ-HB-33C"/>
+                                                <constraint firstItem="pE3-fe-qdr" firstAttribute="top" secondItem="OIq-dW-Yop" secondAttribute="top" id="iSo-IA-xlK"/>
+                                                <constraint firstItem="pE3-fe-qdr" firstAttribute="leading" secondItem="A0Z-S9-NKy" secondAttribute="trailing" constant="5" id="imR-IK-YX2"/>
+                                                <constraint firstItem="PhC-ES-kGb" firstAttribute="top" secondItem="FrG-9D-lc5" secondAttribute="bottom" constant="5" id="ktA-dB-fCn"/>
+                                                <constraint firstItem="FrG-9D-lc5" firstAttribute="top" secondItem="pE3-fe-qdr" secondAttribute="bottom" constant="5" id="m4m-4b-VHB"/>
+                                                <constraint firstItem="PhC-ES-kGb" firstAttribute="leading" secondItem="A0Z-S9-NKy" secondAttribute="trailing" constant="5" id="mRw-YF-hmI"/>
+                                                <constraint firstAttribute="trailing" secondItem="kZt-oV-pQd" secondAttribute="trailing" id="oUE-tu-xxX"/>
+                                                <constraint firstItem="kZt-oV-pQd" firstAttribute="leading" secondItem="PhC-ES-kGb" secondAttribute="trailing" constant="5" id="qv0-nd-qsi"/>
+                                                <constraint firstAttribute="bottom" secondItem="A0Z-S9-NKy" secondAttribute="bottom" id="rN0-Sv-Zqa"/>
+                                                <constraint firstAttribute="trailing" secondItem="FrG-9D-lc5" secondAttribute="trailing" constant="5" id="rgX-LO-kkJ"/>
+                                                <constraint firstItem="A0Z-S9-NKy" firstAttribute="top" secondItem="OIq-dW-Yop" secondAttribute="top" id="scK-Yo-nle"/>
+                                                <constraint firstAttribute="bottom" secondItem="PhC-ES-kGb" secondAttribute="bottom" id="tIZ-GD-YJg"/>
+                                                <constraint firstItem="FrG-9D-lc5" firstAttribute="leading" secondItem="A0Z-S9-NKy" secondAttribute="trailing" constant="5" id="uX4-0r-lCN"/>
+                                                <constraint firstAttribute="bottom" secondItem="kZt-oV-pQd" secondAttribute="bottom" id="wOb-5h-j4k"/>
+                                                <constraint firstItem="pE3-fe-qdr" firstAttribute="top" secondItem="OIq-dW-Yop" secondAttribute="top" id="xfk-Y0-ipo"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countryLabel" destination="pE3-fe-qdr" id="uAK-Ze-kAt"/>
+                                            <outlet property="dateLabel" destination="FrG-9D-lc5" id="liB-st-GIN"/>
+                                            <outlet property="descriptionLabel" destination="PhC-ES-kGb" id="rbX-hJ-Sjc"/>
+                                            <outlet property="logoMeteoCell" destination="A0Z-S9-NKy" id="u0b-U3-mUd"/>
+                                            <outlet property="temperatureLabel" destination="kZt-oV-pQd" id="Ggq-ZC-KUy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="ofv-X1-4he" id="e3h-Zj-9lm"/>
-                                    <outlet property="delegate" destination="ofv-X1-4he" id="lqg-2i-6u7"/>
+                                    <outlet property="dataSource" destination="ofv-X1-4he" id="tKE-hY-maG"/>
+                                    <outlet property="delegate" destination="ofv-X1-4he" id="QO4-JZ-YwS"/>
                                 </connections>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vKT-cH-3y6">
+                                <rect key="frame" x="0.0" y="94" width="414" height="32"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OYu-yb-Q3W">
+                                        <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="32"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Region:FR" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Idl-zg-ddq">
+                                        <rect key="frame" x="141.33333333333331" y="0.0" width="131.33333333333331" height="32"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o01-7p-j2B">
+                                        <rect key="frame" x="282.66666666666669" y="0.0" width="131.33333333333331" height="32"/>
+                                        <state key="normal" image="search meteo"/>
+                                        <connections>
+                                            <action selector="searchCountryButton:" destination="ofv-X1-4he" eventType="touchUpInside" id="Nr5-W5-57c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.50416115448693433" green="0.50172559335414724" blue="0.50659671561972142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="V1W-JI-qmO" firstAttribute="trailing" secondItem="ZmS-Pb-ZqZ" secondAttribute="trailing" id="0Mu-2V-7aK"/>
-                            <constraint firstItem="V1W-JI-qmO" firstAttribute="top" secondItem="ZmS-Pb-ZqZ" secondAttribute="top" id="5eF-KU-oge"/>
+                            <constraint firstItem="ZmS-Pb-ZqZ" firstAttribute="trailing" secondItem="vKT-cH-3y6" secondAttribute="trailing" id="17R-EV-Ouo"/>
                             <constraint firstItem="ZmS-Pb-ZqZ" firstAttribute="bottom" secondItem="mdX-Im-Z1P" secondAttribute="bottom" id="PTU-cc-vvp"/>
-                            <constraint firstItem="V1W-JI-qmO" firstAttribute="leading" secondItem="ZmS-Pb-ZqZ" secondAttribute="leading" id="ayq-MP-oCO"/>
+                            <constraint firstItem="vKT-cH-3y6" firstAttribute="top" secondItem="ZmS-Pb-ZqZ" secondAttribute="top" constant="30" id="abF-ac-XfI"/>
+                            <constraint firstItem="mdX-Im-Z1P" firstAttribute="top" secondItem="vKT-cH-3y6" secondAttribute="bottom" constant="10" id="g4n-Y3-8vk"/>
                             <constraint firstItem="ZmS-Pb-ZqZ" firstAttribute="trailing" secondItem="mdX-Im-Z1P" secondAttribute="trailing" id="lRT-lR-31z"/>
                             <constraint firstItem="mdX-Im-Z1P" firstAttribute="leading" secondItem="ZmS-Pb-ZqZ" secondAttribute="leading" id="rHu-gJ-oxI"/>
-                            <constraint firstItem="mdX-Im-Z1P" firstAttribute="top" secondItem="V1W-JI-qmO" secondAttribute="bottom" id="sjT-aZ-Vy2"/>
+                            <constraint firstItem="vKT-cH-3y6" firstAttribute="leading" secondItem="ZmS-Pb-ZqZ" secondAttribute="leading" id="xsx-op-s6t"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZmS-Pb-ZqZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Meteo" image="LogoMeteo" id="zjM-pC-mtT"/>
                     <connections>
-                        <outlet property="CountryTableView" destination="mdX-Im-Z1P" id="TZb-0Q-yE6"/>
-                        <outlet property="countrySearchBar" destination="V1W-JI-qmO" id="j7I-oG-g0W"/>
+                        <outlet property="countruTextField" destination="OYu-yb-Q3W" id="SH5-Vw-Qxi"/>
+                        <outlet property="meteoTableView" destination="mdX-Im-Z1P" id="VIP-iL-0GI"/>
+                        <outlet property="regionTextField" destination="Idl-zg-ddq" id="5PV-w6-ePW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jkt-za-GGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,7 +237,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-294" y="960"/>
+            <point key="canvasLocation" x="-294.20289855072468" y="959.51086956521749"/>
         </scene>
         <!--Exchange-->
         <scene sceneID="Em7-4F-THC">
@@ -303,5 +377,6 @@
         <image name="Exchange" width="24" height="22"/>
         <image name="LogoMeteo" width="24" height="24"/>
         <image name="TranslateLogo" width="20" height="20"/>
+        <image name="search meteo" width="32" height="32"/>
     </resources>
 </document>

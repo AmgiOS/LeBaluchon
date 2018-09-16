@@ -20,6 +20,9 @@ class FakeResponseData {
     class TranslationError: Error{}
     static let errorTranslation = TranslationError()
     
+    class MeteoError: Error {}
+    static let errorMeteo = MeteoError()
+    
     //MARK: CORRECT DATA
     static var deviceCorrectData: Data {
         let bundle = Bundle(for: FakeResponseData.self)
@@ -49,7 +52,16 @@ class FakeResponseData {
         return data
     }
     
+    static var meteoCorrectData: Data {
+        let bundle = Bundle(for: FakeResponseData.self)
+        let url = bundle.url(forResource: "Meteo", withExtension: "json")
+        let data = try! Data(contentsOf: url!)
+        return data
+    }
+    
     //MARK: INCORRECT DATA
     static let deviceIncorrectData = "erreur".data(using: .utf8)!
     static let translationIncorrectData = "erreur".data(using: .utf8)!
+    static let meteoIncorrectData = "erreur".data(using: .utf8)!
+
 }

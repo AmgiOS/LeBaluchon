@@ -15,6 +15,8 @@
 		996274382138B5A1003C25DA /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996274372138B5A1003C25DA /* TranslateService.swift */; };
 		999C9BB0212E275200E302CF /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C9BAF212E275200E302CF /* TranslateViewController.swift */; };
 		999C9BB2212E276900E302CF /* MeteoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C9BB1212E276900E302CF /* MeteoViewController.swift */; };
+		99AD3BFD214F06FE0055EA49 /* Meteo.json in Resources */ = {isa = PBXBuildFile; fileRef = 99AD3BFC214F06FE0055EA49 /* Meteo.json */; };
+		99AD3BFF214F0C2F0055EA49 /* MeteoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD3BFE214F0C2F0055EA49 /* MeteoViewCell.swift */; };
 		99AD800E214BF0DA00E60D87 /* Device.json in Resources */ = {isa = PBXBuildFile; fileRef = 99AD800D214BF0DA00E60D87 /* Device.json */; };
 		99AD8010214BF10A00E60D87 /* Translation.json in Resources */ = {isa = PBXBuildFile; fileRef = 99AD800F214BF10A00E60D87 /* Translation.json */; };
 		99AD8012214BF15D00E60D87 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD8011214BF15D00E60D87 /* FakeResponseData.swift */; };
@@ -50,6 +52,8 @@
 		996274372138B5A1003C25DA /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
 		999C9BAF212E275200E302CF /* TranslateViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		999C9BB1212E276900E302CF /* MeteoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoViewController.swift; sourceTree = "<group>"; };
+		99AD3BFC214F06FE0055EA49 /* Meteo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Meteo.json; sourceTree = "<group>"; };
+		99AD3BFE214F0C2F0055EA49 /* MeteoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoViewCell.swift; sourceTree = "<group>"; };
 		99AD800D214BF0DA00E60D87 /* Device.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Device.json; sourceTree = "<group>"; };
 		99AD800F214BF10A00E60D87 /* Translation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translation.json; sourceTree = "<group>"; };
 		99AD8011214BF15D00E60D87 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 				99AD8019214C19AF00E60D87 /* DeviceSymbols.json */,
 				99AD800F214BF10A00E60D87 /* Translation.json */,
 				993E9BBD214D141800C34D19 /* TranslationLanguages.json */,
+				99AD3BFC214F06FE0055EA49 /* Meteo.json */,
 			);
 			path = Projet9TestsCase;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 		99E0EA26212C642900EB8CA2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				99AD3BFE214F0C2F0055EA49 /* MeteoViewCell.swift */,
 				99E0EA17212C640B00EB8CA2 /* Main.storyboard */,
 				99E0EA1C212C640C00EB8CA2 /* LaunchScreen.storyboard */,
 			);
@@ -254,6 +260,7 @@
 				99AD800E214BF0DA00E60D87 /* Device.json in Resources */,
 				99AD8010214BF10A00E60D87 /* Translation.json in Resources */,
 				99AD801A214C19AF00E60D87 /* DeviceSymbols.json in Resources */,
+				99AD3BFD214F06FE0055EA49 /* Meteo.json in Resources */,
 				993E9BBE214D141800C34D19 /* TranslationLanguages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +302,7 @@
 				991CCA7E21468D3A006CC331 /* Device Struct.swift in Sources */,
 				996274362138A751003C25DA /* MeteoService.swift in Sources */,
 				99AD8016214BFCF600E60D87 /* ExchangeViewController.swift in Sources */,
+				99AD3BFF214F0C2F0055EA49 /* MeteoViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

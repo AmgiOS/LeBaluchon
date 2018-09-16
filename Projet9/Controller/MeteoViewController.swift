@@ -10,29 +10,64 @@ import UIKit
 
 class MeteoViewController: UIViewController {
     
-    
-    @IBOutlet weak var countrySearchBar: UISearchBar!
-    @IBOutlet weak var CountryTableView: UITableView!
+    var meteoVar: [MeteoVar] = []
+    var componentMeteo: MeteoVar?
+    @IBOutlet weak var countruTextField: UITextField!
+    @IBOutlet weak var regionTextField: UITextField!
+    @IBOutlet weak var meteoTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        }
+    
+    @IBAction func searchCountryButton(_ sender: UIButton) {
+        meteoData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
 }
 
-//extension MeteoViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-//}
+extension MeteoViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "meteoCell") as! MeteoViewCell
+        let meteo = meteoVar[indexPath.row]
+        
+        cell.countryLabel.text = meteo.countryMeteo
+        cell.descriptionLabel.text = meteo.descriptionMeteo
+        cell.dateLabel.text = meteo.dateMeteo
+        cell.temperatureLabel.text = meteo.tempMeteo
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return meteoVar.count
+    }
+}
+
+extension MeteoViewController {
+    
+    private func meteoData () {
+        guard let countrySearch = countruTextField.text else {return}
+        guard let regionSearch = regionTextField.text else {return}
+        MeteoService.shared.getMeteo(country: countrySearch, region: regionSearch) { (success, meteo) in
+            if success, let meteoOK = meteo {
+                self.updateMeteo(meteoOK: meteoOK)
+                self.addCellOnTableView()
+            }
+        }
+    }
+    
+    private func updateMeteo(meteoOK: Meteo) {
+        componentMeteo?.countryMeteo = meteoOK.query.results.channel.description
+        componentMeteo?.dateMeteo = meteoOK.query.results.channel.lastBuildDate
+        componentMeteo?.descriptionMeteo = meteoOK.query.results.channel.item.condition.text
+        componentMeteo?.tempMeteo = meteoOK.query.results.channel.item.condition.temp
+    }
+
+    private func addCellOnTableView() {
+        let indexPath = IndexPath(row: meteoVar.count - 1, section: 0)
+        meteoTableView.beginUpdates()
+        meteoTableView.insertRows(at: [indexPath], with: .automatic)
+        meteoTableView.endUpdates()
+    }
+}
