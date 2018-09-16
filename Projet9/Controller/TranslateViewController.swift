@@ -10,7 +10,7 @@ import UIKit
 
 class TranslateViewController: UIViewController {
     
-    private var language: [String] = []
+    private var language = [String]()
     @IBOutlet weak var toTranslateTextView: UITextView!
     @IBOutlet weak var translatedFinish: UILabel!
     @IBOutlet weak var inLanguagePickerView: UIPickerView!
@@ -21,16 +21,6 @@ class TranslateViewController: UIViewController {
      super.viewDidLoad()
      updateLanguages()
     }
-     
-     private func updateLanguages() {
-          TranslateService.shared.getLanguages { (data) in
-               if let data = data {
-                    self.language = data
-                    self.inLanguagePickerView.dataSource = self
-                    self.inLanguagePickerView.delegate = self
-               }
-          }
-     }
 }
 
 extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -48,9 +38,12 @@ extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource 
 }
 
 extension TranslateViewController {
-     
+     //MARK: @IB ACTION
      @IBAction func translateButtonTapped(_ sender: UIButton) {
           guard let text = toTranslateTextView.text else {return}
+          if text.isEmpty {
+               errorTextIsEmpty()
+          }
           let target = language[inLanguagePickerView.selectedRow(inComponent: 0)]
           toggleActivityIndicator(shown: true)
                TranslateService.shared.getTranslate(text: text, target: target) { (success, translates) in
@@ -68,12 +61,28 @@ extension TranslateViewController {
         inLanguagePickerView.resignFirstResponder()
     }
     
+     //MARK: FUNCTIONS
      private func update(translate: DataTranslate) {
      translatedFinish.text = translate.data.translations[0].translatedText
     }
     
+     private func updateLanguages() {
+          TranslateService.shared.getLanguages { (data) in
+               if let data = data {
+                    self.language = data
+                    self.inLanguagePickerView.dataSource = self
+                    self.inLanguagePickerView.delegate = self
+               }
+          }
+     }
      private func ErrorAlertAction() {
           let alert = UIAlertController(title: "Error", message: "The Translation download error", preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+          self.present(alert, animated: true, completion: nil)
+     }
+     
+     private func errorTextIsEmpty() {
+          let alert = UIAlertController(title: "Error", message: "Translate Text is Empty", preferredStyle: .alert)
           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
           self.present(alert, animated: true, completion: nil)
      }

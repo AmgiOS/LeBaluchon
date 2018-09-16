@@ -22,16 +22,6 @@ class ExchangeViewController: UIViewController {
         super.viewDidLoad()
         updateSymbols()
     }
-    
-    private func updateSymbols() {
-        DeviceService.shared.getSymbols { (data) in
-            if let data = data {
-                self.viewSymbols = data
-                self.inChangePickerView.dataSource = self
-                self.inChangePickerView.delegate = self
-            }
-        }
-    }
 }
     extension ExchangeViewController:  UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -63,14 +53,28 @@ extension ExchangeViewController {
         }
     }
     
+    //MARK: FUNCTIONS
     private func updateDevice(device: Device) {
         guard let text = amoutTextField.text else {return}
-        for (key, value) in device.rates {
+        device.rates.forEach { (key, value) in
             displayDeviceTextView.text.append(contentsOf: "\(key):\(value)\n")
-            if String(viewSymbols[inChangePickerView.selectedRow(inComponent: 0)]) == key {
+            if String(viewSymbols[inChangePickerView.selectedRow(inComponent: 0)]) == key && text != "" {
+                resultLabel.isHidden = false
                 guard let float = Double(text) else {return}
                 let result = float * value
-                resultLabel.text = "\(result)"
+                resultLabel.text = "\(result) \(String(viewSymbols[inChangePickerView.selectedRow(inComponent: 0)]))"
+            } else {
+                
+            }
+        }
+    }
+    
+    private func updateSymbols() {
+        DeviceService.shared.getSymbols { (data) in
+            if let data = data {
+                self.viewSymbols = data
+                self.inChangePickerView.dataSource = self
+                self.inChangePickerView.delegate = self
             }
         }
     }
@@ -83,6 +87,5 @@ extension ExchangeViewController {
         let alert = UIAlertController(title: "Error", message: "The Device download error", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        
     }
 }
