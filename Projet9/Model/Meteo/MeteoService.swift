@@ -29,7 +29,6 @@ class MeteoService {
         guard let url = URL(string: url + q + region + format) else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        print(url)
         
         task?.cancel()
         task = meteoSession.dataTask(with: request, completionHandler: { (data, response, error) in
@@ -43,7 +42,7 @@ class MeteoService {
                     callback(false, nil)
                     return
                 }
-                print(3)
+                
                 guard let responseJSON = try? JSONDecoder().decode(Meteo.self, from: data) else {
                     callback(false, nil)
                     return

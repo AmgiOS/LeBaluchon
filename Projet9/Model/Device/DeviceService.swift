@@ -12,7 +12,7 @@ class DeviceService {
     static var shared = DeviceService()
     private init() {}
 
-    private let urlBase = "http://data.fixer.io/api/latest?access_key=f634e71e9b2bbd5bf2eed8f0d69e1d76"
+    private static let urlBase = URL(string: "http://data.fixer.io/api/latest?access_key=f634e71e9b2bbd5bf2eed8f0d69e1d76")!
     private let urlSymbols = URL(string:"http://data.fixer.io/api/symbols?access_key=f634e71e9b2bbd5bf2eed8f0d69e1d76")!
     
     private var task: URLSessionTask?
@@ -24,12 +24,14 @@ class DeviceService {
         self.symbolsSession = symbolsSession
     }
     
-    func getDevice(Amount: String, callback: @escaping (Bool, Device?) -> Void) {
-        let url = URL(string: urlBase)!
-        var request = URLRequest(url: url)
+    private func requestDevice() -> URLRequest {
+        var request = URLRequest(url: DeviceService.urlBase)
         request.httpMethod = "GET"
-        print(urlBase)
-        
+        return request
+    }
+    
+    func getDevice(Amount: String, callback: @escaping (Bool, Device?) -> Void) {
+        let request = requestDevice()
         task?.cancel()
         task = deviceSession.dataTask(with: request, completionHandler: { (data, response, error) in
             

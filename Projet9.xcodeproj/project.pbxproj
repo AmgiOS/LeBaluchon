@@ -9,7 +9,12 @@
 /* Begin PBXBuildFile section */
 		991CCA7E21468D3A006CC331 /* Device Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CCA7D21468D3A006CC331 /* Device Struct.swift */; };
 		991CCA8021468D5A006CC331 /* TranslateStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CCA7F21468D5A006CC331 /* TranslateStruct.swift */; };
-		992499FA213D3BB000BA4385 /* Projet9TestsCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992499F9213D3BB000BA4385 /* Projet9TestsCase.swift */; };
+		99362FE521527DF400CEA4C5 /* DeviceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99362FE421527DF400CEA4C5 /* DeviceTest.swift */; };
+		99362FEB21527F1F00CEA4C5 /* FakeResponseDataTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99362FEA21527F1F00CEA4C5 /* FakeResponseDataTranslate.swift */; };
+		99362FED21527F2E00CEA4C5 /* FakeResponseDataMeteo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99362FEC21527F2E00CEA4C5 /* FakeResponseDataMeteo.swift */; };
+		99362FEF21527F6900CEA4C5 /* TranslateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99362FEE21527F6900CEA4C5 /* TranslateTest.swift */; };
+		993630012152807900CEA4C5 /* FakeResponseDataDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99362FE621527E7700CEA4C5 /* FakeResponseDataDevice.swift */; };
+		993630032152811800CEA4C5 /* MeteoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993630022152811800CEA4C5 /* MeteoTest.swift */; };
 		993E9BBE214D141800C34D19 /* TranslationLanguages.json in Resources */ = {isa = PBXBuildFile; fileRef = 993E9BBD214D141800C34D19 /* TranslationLanguages.json */; };
 		996274362138A751003C25DA /* MeteoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996274352138A751003C25DA /* MeteoService.swift */; };
 		996274382138B5A1003C25DA /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996274372138B5A1003C25DA /* TranslateService.swift */; };
@@ -19,7 +24,6 @@
 		99AD3BFF214F0C2F0055EA49 /* MeteoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD3BFE214F0C2F0055EA49 /* MeteoViewCell.swift */; };
 		99AD800E214BF0DA00E60D87 /* Device.json in Resources */ = {isa = PBXBuildFile; fileRef = 99AD800D214BF0DA00E60D87 /* Device.json */; };
 		99AD8010214BF10A00E60D87 /* Translation.json in Resources */ = {isa = PBXBuildFile; fileRef = 99AD800F214BF10A00E60D87 /* Translation.json */; };
-		99AD8012214BF15D00E60D87 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD8011214BF15D00E60D87 /* FakeResponseData.swift */; };
 		99AD8014214BF6E700E60D87 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD8013214BF6E700E60D87 /* URLSessionFake.swift */; };
 		99AD8016214BFCF600E60D87 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD8015214BFCF600E60D87 /* ExchangeViewController.swift */; };
 		99AD801A214C19AF00E60D87 /* DeviceSymbols.json in Resources */ = {isa = PBXBuildFile; fileRef = 99AD8019214C19AF00E60D87 /* DeviceSymbols.json */; };
@@ -45,8 +49,13 @@
 		991CCA7D21468D3A006CC331 /* Device Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device Struct.swift"; sourceTree = "<group>"; };
 		991CCA7F21468D5A006CC331 /* TranslateStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateStruct.swift; sourceTree = "<group>"; };
 		992499F7213D3BB000BA4385 /* Projet9TestsCase.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Projet9TestsCase.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		992499F9213D3BB000BA4385 /* Projet9TestsCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet9TestsCase.swift; sourceTree = "<group>"; };
 		992499FB213D3BB000BA4385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99362FE421527DF400CEA4C5 /* DeviceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTest.swift; sourceTree = "<group>"; };
+		99362FE621527E7700CEA4C5 /* FakeResponseDataDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseDataDevice.swift; sourceTree = "<group>"; };
+		99362FEA21527F1F00CEA4C5 /* FakeResponseDataTranslate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseDataTranslate.swift; sourceTree = "<group>"; };
+		99362FEC21527F2E00CEA4C5 /* FakeResponseDataMeteo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseDataMeteo.swift; sourceTree = "<group>"; };
+		99362FEE21527F6900CEA4C5 /* TranslateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTest.swift; sourceTree = "<group>"; };
+		993630022152811800CEA4C5 /* MeteoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoTest.swift; sourceTree = "<group>"; };
 		993E9BBD214D141800C34D19 /* TranslationLanguages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TranslationLanguages.json; sourceTree = "<group>"; };
 		996274352138A751003C25DA /* MeteoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoService.swift; sourceTree = "<group>"; };
 		996274372138B5A1003C25DA /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
@@ -56,7 +65,6 @@
 		99AD3BFE214F0C2F0055EA49 /* MeteoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoViewCell.swift; sourceTree = "<group>"; };
 		99AD800D214BF0DA00E60D87 /* Device.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Device.json; sourceTree = "<group>"; };
 		99AD800F214BF10A00E60D87 /* Translation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translation.json; sourceTree = "<group>"; };
-		99AD8011214BF15D00E60D87 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		99AD8013214BF6E700E60D87 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		99AD8015214BFCF600E60D87 /* ExchangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		99AD8019214C19AF00E60D87 /* DeviceSymbols.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DeviceSymbols.json; sourceTree = "<group>"; };
@@ -91,17 +99,72 @@
 		992499F8213D3BB000BA4385 /* Projet9TestsCase */ = {
 			isa = PBXGroup;
 			children = (
-				992499F9213D3BB000BA4385 /* Projet9TestsCase.swift */,
 				99AD8013214BF6E700E60D87 /* URLSessionFake.swift */,
-				99AD8011214BF15D00E60D87 /* FakeResponseData.swift */,
+				99362FE321527DB200CEA4C5 /* Device */,
+				99362FE821527E8400CEA4C5 /* Translate */,
+				99362FE921527E8F00CEA4C5 /* Meteo */,
 				992499FB213D3BB000BA4385 /* Info.plist */,
-				99AD800D214BF0DA00E60D87 /* Device.json */,
-				99AD8019214C19AF00E60D87 /* DeviceSymbols.json */,
-				99AD800F214BF10A00E60D87 /* Translation.json */,
-				993E9BBD214D141800C34D19 /* TranslationLanguages.json */,
-				99AD3BFC214F06FE0055EA49 /* Meteo.json */,
 			);
 			path = Projet9TestsCase;
+			sourceTree = "<group>";
+		};
+		99362FD221527C4900CEA4C5 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				99F27E282135F9D800D56DBD /* DeviceService.swift */,
+				991CCA7D21468D3A006CC331 /* Device Struct.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		99362FD321527C5F00CEA4C5 /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				996274372138B5A1003C25DA /* TranslateService.swift */,
+				991CCA7F21468D5A006CC331 /* TranslateStruct.swift */,
+			);
+			path = Translation;
+			sourceTree = "<group>";
+		};
+		99362FD421527C7500CEA4C5 /* Meteo */ = {
+			isa = PBXGroup;
+			children = (
+				996274352138A751003C25DA /* MeteoService.swift */,
+				99F27E2A2135FAC400D56DBD /* MeteoStruct.swift */,
+			);
+			path = Meteo;
+			sourceTree = "<group>";
+		};
+		99362FE321527DB200CEA4C5 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				99362FE421527DF400CEA4C5 /* DeviceTest.swift */,
+				99362FE621527E7700CEA4C5 /* FakeResponseDataDevice.swift */,
+				99AD800D214BF0DA00E60D87 /* Device.json */,
+				99AD8019214C19AF00E60D87 /* DeviceSymbols.json */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		99362FE821527E8400CEA4C5 /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				99362FEE21527F6900CEA4C5 /* TranslateTest.swift */,
+				99362FEA21527F1F00CEA4C5 /* FakeResponseDataTranslate.swift */,
+				99AD800F214BF10A00E60D87 /* Translation.json */,
+				993E9BBD214D141800C34D19 /* TranslationLanguages.json */,
+			);
+			path = Translate;
+			sourceTree = "<group>";
+		};
+		99362FE921527E8F00CEA4C5 /* Meteo */ = {
+			isa = PBXGroup;
+			children = (
+				993630022152811800CEA4C5 /* MeteoTest.swift */,
+				99362FEC21527F2E00CEA4C5 /* FakeResponseDataMeteo.swift */,
+				99AD3BFC214F06FE0055EA49 /* Meteo.json */,
+			);
+			path = Meteo;
 			sourceTree = "<group>";
 		};
 		99E0EA07212C640B00EB8CA2 = {
@@ -156,12 +219,9 @@
 		99E0EA27212C643C00EB8CA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				99F27E282135F9D800D56DBD /* DeviceService.swift */,
-				991CCA7D21468D3A006CC331 /* Device Struct.swift */,
-				996274372138B5A1003C25DA /* TranslateService.swift */,
-				991CCA7F21468D5A006CC331 /* TranslateStruct.swift */,
-				996274352138A751003C25DA /* MeteoService.swift */,
-				99F27E2A2135FAC400D56DBD /* MeteoStruct.swift */,
+				99362FD221527C4900CEA4C5 /* Device */,
+				99362FD321527C5F00CEA4C5 /* Translation */,
+				99362FD421527C7500CEA4C5 /* Meteo */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,16 +280,18 @@
 		99E0EA08212C640B00EB8CA2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Amg-Industries";
 				TargetAttributes = {
 					992499F6213D3BB000BA4385 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 99E0EA0F212C640B00EB8CA2;
 					};
 					99E0EA0F212C640B00EB8CA2 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -282,9 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				992499FA213D3BB000BA4385 /* Projet9TestsCase.swift in Sources */,
+				993630012152807900CEA4C5 /* FakeResponseDataDevice.swift in Sources */,
 				99AD8014214BF6E700E60D87 /* URLSessionFake.swift in Sources */,
-				99AD8012214BF15D00E60D87 /* FakeResponseData.swift in Sources */,
+				993630032152811800CEA4C5 /* MeteoTest.swift in Sources */,
+				99362FED21527F2E00CEA4C5 /* FakeResponseDataMeteo.swift in Sources */,
+				99362FEF21527F6900CEA4C5 /* TranslateTest.swift in Sources */,
+				99362FE521527DF400CEA4C5 /* DeviceTest.swift in Sources */,
+				99362FEB21527F1F00CEA4C5 /* FakeResponseDataTranslate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +416,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.amgindustries.Projet9TestsCase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Projet9.app/Projet9";
 			};
@@ -370,7 +436,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.amgindustries.Projet9TestsCase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Projet9.app/Projet9";
 			};
@@ -503,7 +569,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.amgindustries.Projet9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -521,7 +587,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.amgindustries.Projet9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

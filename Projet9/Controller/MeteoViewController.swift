@@ -11,14 +11,13 @@ import UIKit
 class MeteoViewController: UIViewController {
     
     var meteoVar: [MeteoVar] = []
-    var componentMeteo: MeteoVar?
     @IBOutlet weak var countruTextField: UITextField!
     @IBOutlet weak var regionTextField: UITextField!
     @IBOutlet weak var meteoTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        meteoDidLoad()
         }
     
     @IBAction func searchCountryButton(_ sender: UIButton) {
@@ -45,29 +44,34 @@ extension MeteoViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MeteoViewController {
-    
     private func meteoData () {
         guard let countrySearch = countruTextField.text else {return}
         guard let regionSearch = regionTextField.text else {return}
         MeteoService.shared.getMeteo(country: countrySearch, region: regionSearch) { (success, meteo) in
             if success, let meteoOK = meteo {
-                self.updateMeteo(meteoOK: meteoOK)
-                self.addCellOnTableView()
+                let meteoVar = self.updateMeteo(meteoOK: meteoOK)
+                self.meteoVar.append(meteoVar)
+                self.meteoTableView.reloadData()
             }
         }
     }
     
-    private func updateMeteo(meteoOK: Meteo) {
-        componentMeteo?.countryMeteo = meteoOK.query.results.channel.description
-        componentMeteo?.dateMeteo = meteoOK.query.results.channel.lastBuildDate
-        componentMeteo?.descriptionMeteo = meteoOK.query.results.channel.item.condition.text
-        componentMeteo?.tempMeteo = meteoOK.query.results.channel.item.condition.temp
+    private func meteoDidLoad() {
+        MeteoService.shared.getMeteo(country: "new York", region: "en") { (success, meteo) in
+            if success, let meteoOK = meteo {
+                let meteoVar = self.updateMeteo(meteoOK: meteoOK)
+                self.meteoVar.append(meteoVar)
+                self.meteoTableView.reloadData()
+            }
+        }
+    }
+    private func updateMeteo(meteoOK: Meteo) -> MeteoVar {
+        let meteoVar = MeteoVar(
+            countryMeteo: meteoOK.query.results.channel.description,
+            descriptionMeteo: meteoOK.query.results.channel.item.condition.text,
+            dateMeteo: meteoOK.query.results.channel.lastBuildDate,
+            tempMeteo: meteoOK.query.results.channel.item.condition.temp)
+        return meteoVar
     }
 
-    private func addCellOnTableView() {
-        let indexPath = IndexPath(row: meteoVar.count - 1, section: 0)
-        meteoTableView.beginUpdates()
-        meteoTableView.insertRows(at: [indexPath], with: .automatic)
-        meteoTableView.endUpdates()
-    }
 }

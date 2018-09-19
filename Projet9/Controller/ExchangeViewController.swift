@@ -23,7 +23,9 @@ class ExchangeViewController: UIViewController {
         updateSymbols()
     }
 }
-    extension ExchangeViewController:  UIPickerViewDelegate, UIPickerViewDataSource{
+
+extension ExchangeViewController:  UIPickerViewDelegate, UIPickerViewDataSource{
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -34,7 +36,6 @@ class ExchangeViewController: UIViewController {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return viewSymbols[row]
     }
-    
 }
 
 extension ExchangeViewController {
@@ -61,7 +62,8 @@ extension ExchangeViewController {
             if String(viewSymbols[inChangePickerView.selectedRow(inComponent: 0)]) == key && text != "" {
                 resultLabel.isHidden = false
                 guard let float = Double(text) else {return}
-                let result = float * value
+                let resultDouble = float * value
+                let result = String(format: "%.2f", resultDouble)
                 resultLabel.text = "\(result) \(String(viewSymbols[inChangePickerView.selectedRow(inComponent: 0)]))"
             } else {
                 
@@ -78,6 +80,7 @@ extension ExchangeViewController {
             }
         }
     }
+    
     private func toggleActivityIndicator(shown: Bool) {
         activityIndicator.isHidden = !shown
         exchangeButton.isHidden = shown

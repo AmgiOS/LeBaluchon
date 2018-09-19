@@ -25,24 +25,30 @@ class TranslateService {
         self.languagesSession = languagesSession
     }
     
-    func getTranslate(text: String, target: String, callback: @escaping (Bool, DataTranslate?) -> Void) {
-        let target = "&target=" + target
-        let api = "&key=AIzaSyC1ZxcC7a_dOzo92PFkbA2JMgHz_GTqM7U"
-        let nmt = "&model=base"
-        let urlTotal = urlbase + target + api + nmt
-        guard let url = URL(string: urlTotal) else {return}
+    private func requestTranslate(text: String, url: URL) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
         let body = "q=" + text
         request.httpBody = body.data(using: .utf8)
         
+        return request
+    }
+    
+    func getTranslate(text: String, target: String, callback: @escaping (Bool, DataTranslate?) -> Void) {
+        let target = "&target=" + target
+        let api = "&key=AIzaSyC1ZxcC7a_dOzo92PFkbA2JMgHz_GTqM7U"
+        let nmt = "&model=base"
+        let format = "&format=text"
+        let urlTotal = urlbase + target + api + nmt + format
+        guard let url = URL(string: urlTotal) else {return}
+        let request = requestTranslate(text: text, url: url)
+        
         task?.cancel()
         task = translateSession.dataTask(with: request, completionHandler: { (data, response, error) in
             
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
-                    print(1)
                     callback(false, nil)
                     return
                 }
@@ -94,4 +100,5 @@ class TranslateService {
         })
         task?.resume()
     }
+
 }
