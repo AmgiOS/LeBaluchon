@@ -16,7 +16,6 @@ class TranslateService {
     private static let languagesUrl = URL(string: "https://translation.googleapis.com/language/translate/v2/languages?key=AIzaSyC1ZxcC7a_dOzo92PFkbA2JMgHz_GTqM7U")!
     
     private var task: URLSessionTask?
-    
     private var translateSession = URLSession(configuration: .default)
     private var languagesSession = URLSession(configuration: .default)
     
@@ -31,7 +30,6 @@ class TranslateService {
         
         let body = "q=" + text
         request.httpBody = body.data(using: .utf8)
-        
         return request
     }
     
@@ -46,7 +44,6 @@ class TranslateService {
         
         task?.cancel()
         task = translateSession.dataTask(with: request, completionHandler: { (data, response, error) in
-            
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     callback(false, nil)
@@ -95,10 +92,8 @@ class TranslateService {
                     arrayLanguages.append(element.language)
                 }
                 completionHandler(arrayLanguages)
-                
             }
         })
         task?.resume()
     }
-
 }

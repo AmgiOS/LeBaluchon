@@ -17,7 +17,7 @@ class MeteoTest: XCTestCase {
             meteoSession: URLSessionFake(data: nil, response: nil, error: FakeResponseDataMeteo.errorMeteo))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
-        meteoService.getMeteo(country: "", region: "") { (success, meteo) in
+        meteoService.getMeteo(country: "") { (success, meteo) in
             XCTAssertFalse(success)
             XCTAssertNil(meteo)
             expectation.fulfill()
@@ -31,7 +31,7 @@ class MeteoTest: XCTestCase {
             meteoSession: URLSessionFake(data: nil, response: nil, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
-        meteoService.getMeteo(country: "", region: "") { (success, meteo) in
+        meteoService.getMeteo(country: "") { (success, meteo) in
             XCTAssertFalse(success)
             XCTAssertNil(meteo)
             expectation.fulfill()
@@ -45,7 +45,7 @@ class MeteoTest: XCTestCase {
             meteoSession: URLSessionFake(data: FakeResponseDataMeteo.meteoCorrectData, response: FakeResponseDataMeteo.responseKO, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
-        meteoService.getMeteo(country: "", region: "") { (success, meteo) in
+        meteoService.getMeteo(country: "") { (success, meteo) in
             XCTAssertFalse(success)
             XCTAssertNil(meteo)
             expectation.fulfill()
@@ -59,7 +59,7 @@ class MeteoTest: XCTestCase {
             meteoSession: URLSessionFake(data: FakeResponseDataMeteo.meteoIncorrectData, response: FakeResponseDataMeteo.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
-        meteoService.getMeteo(country: "", region: "") { (success, meteo) in
+        meteoService.getMeteo(country: "") { (success, meteo) in
             XCTAssertFalse(success)
             XCTAssertNil(meteo)
             expectation.fulfill()
@@ -73,7 +73,7 @@ class MeteoTest: XCTestCase {
             meteoSession: URLSessionFake(data: FakeResponseDataMeteo.meteoCorrectData, response: FakeResponseDataMeteo.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
-        meteoService.getMeteo(country: "", region: "") { (success, meteo) in
+        meteoService.getMeteo(country: "") { (success, meteo) in
             XCTAssertTrue(success)
             XCTAssertNotNil(meteoService)
             expectation.fulfill()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExchangeViewController: UIViewController {
+class ExchangeViewController: UIViewController, UITextFieldDelegate {
     
     private var viewSymbols = [String]()
     @IBOutlet weak var amoutTextField: UITextField!
@@ -39,7 +39,6 @@ extension ExchangeViewController:  UIPickerViewDelegate, UIPickerViewDataSource{
 }
 
 extension ExchangeViewController {
-    
     @IBAction func exchangeButtonTapped(_ sender: UIButton) {
         guard let text = amoutTextField.text else {return}
         toggleActivityIndicator(shown: true)
@@ -57,6 +56,7 @@ extension ExchangeViewController {
     //MARK: FUNCTIONS
     private func updateDevice(device: Device) {
         guard let text = amoutTextField.text else {return}
+        dismiss(animated: true)
         device.rates.forEach { (key, value) in
             displayDeviceTextView.text.append(contentsOf: "\(key):\(value)\n")
             if String(viewSymbols[inChangePickerView.selectedRow(inComponent: 0)]) == key && text != "" {
@@ -65,8 +65,6 @@ extension ExchangeViewController {
                 let resultDouble = float * value
                 let result = String(format: "%.2f", resultDouble)
                 resultLabel.text = "\(result) \(String(viewSymbols[inChangePickerView.selectedRow(inComponent: 0)]))"
-            } else {
-                
             }
         }
     }
@@ -74,13 +72,27 @@ extension ExchangeViewController {
     private func updateSymbols() {
         DeviceService.shared.getSymbols { (data) in
             if let data = data {
-                self.viewSymbols = data
+                let array = data.sorted(by: <)
+                self.viewSymbols = array
                 self.inChangePickerView.dataSource = self
                 self.inChangePickerView.delegate = self
             }
         }
     }
+}
+
+extension ExchangeViewController {
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        amoutTextField.resignFirstResponder()
+    }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        amoutTextField.text = ""
+    }
     private func toggleActivityIndicator(shown: Bool) {
         activityIndicator.isHidden = !shown
         exchangeButton.isHidden = shown
@@ -92,3 +104,4 @@ extension ExchangeViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+

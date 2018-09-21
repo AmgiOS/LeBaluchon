@@ -34,7 +34,6 @@ class DeviceService {
         let request = requestDevice()
         task?.cancel()
         task = deviceSession.dataTask(with: request, completionHandler: { (data, response, error) in
-            
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
                     callback(false, nil)
@@ -55,7 +54,7 @@ class DeviceService {
             }
         })
         task?.resume()
-        }
+    }
     
     func getSymbols(completionHandler: @escaping ([String]?) -> Void) {
         var request = URLRequest(url: urlSymbols)

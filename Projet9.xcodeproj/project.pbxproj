@@ -126,13 +126,13 @@
 			path = Translation;
 			sourceTree = "<group>";
 		};
-		99362FD421527C7500CEA4C5 /* Meteo */ = {
+		99362FD421527C7500CEA4C5 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
 				996274352138A751003C25DA /* MeteoService.swift */,
 				99F27E2A2135FAC400D56DBD /* MeteoStruct.swift */,
 			);
-			path = Meteo;
+			path = Weather;
 			sourceTree = "<group>";
 		};
 		99362FE321527DB200CEA4C5 /* Device */ = {
@@ -221,7 +221,7 @@
 			children = (
 				99362FD221527C4900CEA4C5 /* Device */,
 				99362FD321527C5F00CEA4C5 /* Translation */,
-				99362FD421527C7500CEA4C5 /* Meteo */,
+				99362FD421527C7500CEA4C5 /* Weather */,
 			);
 			path = Model;
 			sourceTree = "<group>";

@@ -12,7 +12,6 @@ class MeteoService {
     static var shared = MeteoService()
     private init() {}
     
-    
     private let url = "https://query.yahooapis.com/v1/public/yql?"
     
     private var task: URLSessionTask?
@@ -21,15 +20,13 @@ class MeteoService {
         self.meteoSession = meteoSession
     }
     
-    func getMeteo(country: String, region: String, callback: @escaping (Bool, Meteo?) -> Void) {
+    func getMeteo(country: String, callback: @escaping (Bool, Meteo?) -> Void) {
         let q = "q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + country
-        let region = "%2C%20" + region
-        let format = "%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
-        
-        guard let url = URL(string: url + q + region + format) else {return}
+        let format = "%2C%20%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
+        guard let url = URL(string: url + q + format) else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        
+
         task?.cancel()
         task = meteoSession.dataTask(with: request, completionHandler: { (data, response, error) in
             DispatchQueue.main.async {
@@ -50,9 +47,7 @@ class MeteoService {
                 let meteo = Meteo(query: responseJSON.query)
                 callback(true, meteo)
             }
-            
         })
         task?.resume()
     }
-
 }

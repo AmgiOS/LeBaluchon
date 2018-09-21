@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TranslateViewController: UIViewController {
+class TranslateViewController: UIViewController, UITextFieldDelegate {
     
     private var language = [String]()
     @IBOutlet weak var toTranslateTextView: UITextView!
-    @IBOutlet weak var translatedFinish: UILabel!
+    @IBOutlet weak var translatedFinish: UITextView!
     @IBOutlet weak var inLanguagePickerView: UIPickerView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var translateButtonTaped: UIButton!
@@ -38,7 +38,6 @@ extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource 
 }
 
 extension TranslateViewController {
-     //MARK: @IB ACTION
      @IBAction func translateButtonTapped(_ sender: UIButton) {
           guard let text = toTranslateTextView.text else {return}
           if text.isEmpty {
@@ -56,17 +55,14 @@ extension TranslateViewController {
                }
           }
      }
-    
-    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-        inLanguagePickerView.resignFirstResponder()
-    }
-    
-     //MARK: FUNCTIONS
+     
      private func update(translate: DataTranslate) {
      translatedFinish.text = translate.data.translations[0].translatedText
     }
     
      private func updateLanguages() {
+          toTranslateTextView.layer.cornerRadius = 10
+          translatedFinish.layer.cornerRadius = 10
           TranslateService.shared.getLanguages { (data) in
                if let data = data {
                     self.language = data
@@ -75,6 +71,23 @@ extension TranslateViewController {
                }
           }
      }
+}
+
+extension TranslateViewController {
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          toTranslateTextView.resignFirstResponder()
+          return true
+     }
+     
+     private func toggleActivityIndicator(shown: Bool) {
+          activityIndicator.isHidden = !shown
+          translateButtonTaped.isHidden = shown
+     }
+     
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+          self.view.endEditing(true)
+     }
+     
      private func ErrorAlertAction() {
           let alert = UIAlertController(title: "Error", message: "The Translation download error", preferredStyle: .alert)
           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -86,9 +99,5 @@ extension TranslateViewController {
           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
           self.present(alert, animated: true, completion: nil)
      }
-     
-     private func toggleActivityIndicator(shown: Bool) {
-        activityIndicator.isHidden = !shown
-        translateButtonTaped.isHidden = shown
-    }
+
 }
