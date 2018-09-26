@@ -8,10 +8,12 @@
 
 import UIKit
 
-class MeteoViewController: UIViewController, UITextFieldDelegate {
-    
+class MeteoViewController: UIViewController {
+    //MARK: VARIABLES
     private var meteoService = MeteoService()
     var meteoVar = [MeteoComponents]()
+    
+    //MARK: OUTLETS
     @IBOutlet weak var countruTextField: UITextField!
     @IBOutlet weak var meteoTableView: UITableView!
     
@@ -20,17 +22,17 @@ class MeteoViewController: UIViewController, UITextFieldDelegate {
         meteoDidLoad()
     }
     
+    //MARK: IBACTION
     @IBAction func searchCountryButton(_ sender: UIButton) {
         meteoData()
     }
 }
 
 extension MeteoViewController: UITableViewDelegate, UITableViewDataSource {
+    //MARK: PICKER VIEW
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "meteoCell") as! MeteoViewCell
         let meteo = meteoVar[indexPath.row]
-//        let celsius = convertFahreineitOnCelsius(Int(meteo.tempMeteo)!)
-        
        cell.meteo = meteo
         return cell
     }
@@ -52,7 +54,9 @@ extension MeteoViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+
 extension MeteoViewController {
+    //MARK: FUNCTIONS
     private func meteoData () {
         guard let countrySearch = countruTextField.text else {return}
         if countrySearch.isEmpty {
@@ -88,8 +92,9 @@ extension MeteoViewController {
     }
 }
 
-extension MeteoViewController {
-    
+
+extension MeteoViewController: UITextFieldDelegate {
+    //MARK: TEXTFIELD
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         countruTextField.resignFirstResponder()
     }
@@ -101,16 +106,10 @@ extension MeteoViewController {
         self.view.endEditing(true)
     }
     
+    //MARK: ALERT
     private func alertTextIsEmpty() {
         let alert = UIAlertController(title: "Error", message: "Text Field Is Empty", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
-    }
-    
-    private func convertFahreineitOnCelsius(_ f: Int) -> String {
-        let convert = f - 32
-        let celsius = Float(convert) / 1.8
-        let result = String(format: "%.1f", celsius)
-        return result
     }
 }

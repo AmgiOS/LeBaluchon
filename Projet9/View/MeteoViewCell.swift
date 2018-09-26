@@ -10,6 +10,7 @@ import UIKit
 
 class MeteoViewCell: UITableViewCell {
     
+    //MARK: VARIABLES
     var meteo: MeteoComponents? {
         didSet {
             countryLabel.text = meteo?.countryMeteo ?? ""
@@ -22,12 +23,16 @@ class MeteoViewCell: UITableViewCell {
             }
         }
     }
+    
+    //MARK: OUTLETS
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherView: UIView!
     
+    
+    //MARK: FUNCTIONS
     override func awakeFromNib() {
         super.awakeFromNib()
         addShadow()

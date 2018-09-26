@@ -9,7 +9,7 @@
 import Foundation
 
 class TranslateService {
-    
+    //MARK: VARIABLES
     private let urlbase = "https://translation.googleapis.com/language/translate/v2?"
     private static let languagesUrl = URL(string: "https://translation.googleapis.com/language/translate/v2/languages?key=AIzaSyC1ZxcC7a_dOzo92PFkbA2JMgHz_GTqM7U")!
     
@@ -22,6 +22,7 @@ class TranslateService {
         self.languagesSession = languagesSession
     }
     
+    //MARK: FUNCTIONS
     private func requestTranslate(text: String, url: URL) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

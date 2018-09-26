@@ -9,7 +9,7 @@
 import Foundation
 
 class DeviceService {
-    
+    //MARK: VARIABLES
     private static let urlBase = URL(string: "http://data.fixer.io/api/latest?access_key=f634e71e9b2bbd5bf2eed8f0d69e1d76")!
     private let urlSymbols = URL(string:"http://data.fixer.io/api/symbols?access_key=f634e71e9b2bbd5bf2eed8f0d69e1d76")!
     
@@ -22,6 +22,7 @@ class DeviceService {
         self.symbolsSession = symbolsSession
     }
     
+    //MARK: FUNCTIONS
     private func requestDevice() -> URLRequest {
         var request = URLRequest(url: DeviceService.urlBase)
         request.httpMethod = "GET"

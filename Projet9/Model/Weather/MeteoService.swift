@@ -9,7 +9,7 @@
 import Foundation
 
 class MeteoService {
-    
+    //MARK: VARIABLES
     private let url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20"
     private let urlFormat = "&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
     
@@ -19,6 +19,7 @@ class MeteoService {
         self.meteoSession = meteoSession
     }
     
+    //MARK: FUNCTIONS
     private func urlWeatherApi(country: String) -> String {
         let request = "(select woeid from geo.places(1) where text='" + country + "')and u= 'c'"
         guard let urlRequestEncoded = request.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return "" }

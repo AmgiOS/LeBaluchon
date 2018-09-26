@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ExchangeViewController: UIViewController, UITextFieldDelegate {
+class ExchangeViewController: UIViewController {
     
+    //MARK: VARIABLES
     private let deviceService = DeviceService()
     private var viewSymbols = [String]()
+    
+    //MARK: OUTLETS
     @IBOutlet weak var amoutTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var exchangeButton: UIButton!
@@ -25,8 +28,8 @@ class ExchangeViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-extension ExchangeViewController:  UIPickerViewDelegate, UIPickerViewDataSource{
-    
+extension ExchangeViewController:  UIPickerViewDelegate, UIPickerViewDataSource {
+    //MARK: PICKER VIEW
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -39,6 +42,7 @@ extension ExchangeViewController:  UIPickerViewDelegate, UIPickerViewDataSource{
     }
 }
 
+//MARK: IBACTION
 extension ExchangeViewController {
     @IBAction func exchangeButtonTapped(_ sender: UIButton) {
         guard let text = amoutTextField.text else {return}
@@ -80,9 +84,15 @@ extension ExchangeViewController {
             }
         }
     }
+    
+    private func toggleActivityIndicator(shown: Bool) {
+        activityIndicator.isHidden = !shown
+        exchangeButton.isHidden = shown
+    }
 }
 
-extension ExchangeViewController {
+extension ExchangeViewController: UITextFieldDelegate {
+    //MARK: TEXTFIELD
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         amoutTextField.resignFirstResponder()
     }
@@ -94,11 +104,8 @@ extension ExchangeViewController {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         amoutTextField.text = ""
     }
-    private func toggleActivityIndicator(shown: Bool) {
-        activityIndicator.isHidden = !shown
-        exchangeButton.isHidden = shown
-    }
     
+    //MARK: ALERT
     private func ErrorAlertAction() {
         let alert = UIAlertController(title: "Error", message: "The Device download error", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
