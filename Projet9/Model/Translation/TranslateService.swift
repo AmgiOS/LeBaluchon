@@ -9,17 +9,15 @@
 import Foundation
 
 class TranslateService {
-    static var shared = TranslateService()
-    private init() {}
     
     private let urlbase = "https://translation.googleapis.com/language/translate/v2?"
     private static let languagesUrl = URL(string: "https://translation.googleapis.com/language/translate/v2/languages?key=AIzaSyC1ZxcC7a_dOzo92PFkbA2JMgHz_GTqM7U")!
     
     private var task: URLSessionTask?
-    private var translateSession = URLSession(configuration: .default)
-    private var languagesSession = URLSession(configuration: .default)
+    private var translateSession: URLSession
+    private var languagesSession: URLSession
     
-    init(translateSession: URLSession, languagesSession: URLSession) {
+    init(translateSession: URLSession = URLSession(configuration: .default), languagesSession: URLSession = URLSession(configuration: .default)) {
         self.translateSession = translateSession
         self.languagesSession = languagesSession
     }

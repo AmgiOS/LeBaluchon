@@ -14,7 +14,7 @@ class DeviceTest: XCTestCase {
     //MARK: DEVICE TEST
     func testGetDeviceShouldPostFailedCallbackIfError() {
         let deviceService = DeviceService(
-            deviceSession: URLSessionFake(data: nil, response: nil, error: FakeResponseDataDevice.errorDevice),
+            deviceSession: URLSessionFake(data: nil, response: nil, error: FakeResponseData.errorDevice),
             symbolsSession: URLSessionFake(data: nil, response: nil, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
@@ -42,7 +42,7 @@ class DeviceTest: XCTestCase {
     
     func testGetDeviceShouldPostFailedCallbackIfIncorrectResponse() {
         let deviceService = DeviceService(
-            deviceSession: URLSessionFake(data: FakeResponseDataDevice.deviceCorrectData, response: FakeResponseDataDevice.responseKO, error: nil),
+            deviceSession: URLSessionFake(data: FakeResponseData.deviceCorrectData, response: FakeResponseData.responseKO, error: nil),
             symbolsSession: URLSessionFake(data: nil, response: nil, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
@@ -56,7 +56,7 @@ class DeviceTest: XCTestCase {
     
     func testGetDeviceShouldPostFailedCallbackIfIncorrectData() {
         let deviceService = DeviceService(
-            deviceSession: URLSessionFake(data: FakeResponseDataDevice.deviceIncorrectData, response: FakeResponseDataDevice.responseOK, error: nil),
+            deviceSession: URLSessionFake(data: FakeResponseData.deviceIncorrectData, response: FakeResponseData.responseOK, error: nil),
             symbolsSession: URLSessionFake(data: nil, response: nil, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
@@ -70,8 +70,8 @@ class DeviceTest: XCTestCase {
     
     func testGetDeviceShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         let deviceService = DeviceService(
-            deviceSession: URLSessionFake(data: FakeResponseDataDevice.deviceCorrectData, response: FakeResponseDataDevice.responseOK, error: nil),
-            symbolsSession: URLSessionFake(data: FakeResponseDataDevice.deviceCorrectData, response: FakeResponseDataDevice.responseOK, error: nil))
+            deviceSession: URLSessionFake(data: FakeResponseData.deviceCorrectData, response: FakeResponseData.responseOK, error: nil),
+            symbolsSession: URLSessionFake(data: FakeResponseData.deviceCorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         deviceService.getDevice(Amount: "") { (success, device) in
@@ -257,7 +257,7 @@ class DeviceTest: XCTestCase {
     func testGetDeviceShouldPostFailedCallbackIfNilAndError() {
         let deviceService = DeviceService(
             deviceSession: URLSessionFake(data: nil, response: nil, error: nil),
-            symbolsSession: URLSessionFake(data: nil, response: nil, error: FakeResponseDataDevice.errorDevice))
+            symbolsSession: URLSessionFake(data: nil, response: nil, error: FakeResponseData.errorDevice))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         deviceService.getSymbols { (array) in
@@ -269,7 +269,7 @@ class DeviceTest: XCTestCase {
     func testGetDeviceShouldPostFailedCallbackIfNoDataSymbols() {
         let deviceService = DeviceService(
             deviceSession: URLSessionFake(data: nil, response: nil, error: nil),
-            symbolsSession: URLSessionFake(data: FakeResponseDataDevice.deviceSymbolsCorrectData, response: FakeResponseDataDevice.responseKO, error: nil))
+            symbolsSession: URLSessionFake(data: FakeResponseData.deviceSymbolsCorrectData, response: FakeResponseData.responseKO, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         deviceService.getSymbols { (array) in
@@ -282,7 +282,7 @@ class DeviceTest: XCTestCase {
     func testGetDeviceShouldPostFailedCallbackIfIncorrectResponseSymbols() {
         let deviceService = DeviceService(
             deviceSession: URLSessionFake(data: nil, response: nil, error: nil),
-            symbolsSession: URLSessionFake(data: FakeResponseDataDevice.deviceIncorrectData, response: FakeResponseDataDevice.responseOK, error: nil))
+            symbolsSession: URLSessionFake(data: FakeResponseData.deviceIncorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         deviceService.getSymbols { (array) in
@@ -295,7 +295,7 @@ class DeviceTest: XCTestCase {
     func testGetDeviceShouldPostCorrectCallbackIfCorrectArraySymbolsAndError() {
         let deviceService = DeviceService(
             deviceSession: URLSessionFake(data: nil, response: nil, error: nil),
-            symbolsSession: URLSessionFake(data: FakeResponseDataDevice.deviceSymbolsCorrectData, response: FakeResponseDataDevice.responseOK, error: nil))
+            symbolsSession: URLSessionFake(data: FakeResponseData.deviceSymbolsCorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "wait for queue change")
         deviceService.getSymbols { (symbols) in

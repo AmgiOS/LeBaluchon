@@ -9,21 +9,25 @@
 import Foundation
 
 class MeteoService {
-    static var shared = MeteoService()
-    private init() {}
     
-    private let url = "https://query.yahooapis.com/v1/public/yql?"
+    private let url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20"
+    private let urlFormat = "&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
     
     private var task: URLSessionTask?
     private var meteoSession = URLSession(configuration: .default)
-    init(meteoSession: URLSession) {
+    init(meteoSession: URLSession = URLSession(configuration: .default)) {
         self.meteoSession = meteoSession
     }
     
+    private func urlWeatherApi(country: String) -> String {
+        let request = "(select woeid from geo.places(1) where text='" + country + "')and u= 'c'"
+        guard let urlRequestEncoded = request.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return "" }
+        let requestFinal = url + urlRequestEncoded + urlFormat
+        return requestFinal
+    }
+    
     func getMeteo(country: String, callback: @escaping (Bool, Meteo?) -> Void) {
-        let q = "q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + country
-        let format = "%2C%20%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
-        guard let url = URL(string: url + q + format) else {return}
+        guard let url = URL(string: urlWeatherApi(country: country)) else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
 

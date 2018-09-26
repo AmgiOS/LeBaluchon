@@ -10,6 +10,18 @@ import UIKit
 
 class MeteoViewCell: UITableViewCell {
     
+    var meteo: MeteoComponents? {
+        didSet {
+            countryLabel.text = meteo?.countryMeteo ?? ""
+            dateLabel.text = meteo?.dateMeteo ?? ""
+            descriptionLabel.text = meteo?.descriptionMeteo ?? ""
+            if let temperature = meteo?.tempMeteo {
+              temperatureLabel.text = temperature + "°"
+            } else {
+                temperatureLabel.text = ""
+            }
+        }
+    }
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!

@@ -9,9 +9,7 @@
 import Foundation
 
 class DeviceService {
-    static var shared = DeviceService()
-    private init() {}
-
+    
     private static let urlBase = URL(string: "http://data.fixer.io/api/latest?access_key=f634e71e9b2bbd5bf2eed8f0d69e1d76")!
     private let urlSymbols = URL(string:"http://data.fixer.io/api/symbols?access_key=f634e71e9b2bbd5bf2eed8f0d69e1d76")!
     
@@ -19,7 +17,7 @@ class DeviceService {
     private var deviceSession = URLSession(configuration: .default)
     private var symbolsSession = URLSession(configuration: .default)
     
-    init(deviceSession: URLSession, symbolsSession: URLSession) {
+    init(deviceSession: URLSession = URLSession(configuration: .default), symbolsSession: URLSession = URLSession(configuration: .default)) {
         self.deviceSession = deviceSession
         self.symbolsSession = symbolsSession
     }

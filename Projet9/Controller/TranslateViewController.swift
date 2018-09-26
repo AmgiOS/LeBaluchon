@@ -10,6 +10,7 @@ import UIKit
 
 class TranslateViewController: UIViewController, UITextFieldDelegate {
     
+    private let translateService = TranslateService()
     private var language = [String]()
     @IBOutlet weak var toTranslateTextView: UITextView!
     @IBOutlet weak var translatedFinish: UITextView!
@@ -19,7 +20,7 @@ class TranslateViewController: UIViewController, UITextFieldDelegate {
      
     override func viewDidLoad() {
      super.viewDidLoad()
-     updateLanguages()
+          updateLanguages()
     }
 }
 
@@ -45,7 +46,7 @@ extension TranslateViewController {
           }
           let target = language[inLanguagePickerView.selectedRow(inComponent: 0)]
           toggleActivityIndicator(shown: true)
-               TranslateService.shared.getTranslate(text: text, target: target) { (success, translates) in
+               translateService.getTranslate(text: text, target: target) { (success, translates) in
                     self.toggleActivityIndicator(shown: false)
                     if success, let translate = translates {
                          self.activityIndicator.isHidden = true
@@ -63,7 +64,7 @@ extension TranslateViewController {
      private func updateLanguages() {
           toTranslateTextView.layer.cornerRadius = 10
           translatedFinish.layer.cornerRadius = 10
-          TranslateService.shared.getLanguages { (data) in
+          translateService.getLanguages { (data) in
                if let data = data {
                     self.language = data
                     self.inLanguagePickerView.dataSource = self

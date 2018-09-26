@@ -170,7 +170,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="rcR-Fh-xSg" secondAttribute="bottom" constant="5" id="g2E-ao-X6U"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="0.65188891267123283" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.79607843140000001" green="0.83529411760000005" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="countryLabel" destination="pE3-fe-qdr" id="uAK-Ze-kAt"/>
                                             <outlet property="dateLabel" destination="FrG-9D-lc5" id="liB-st-GIN"/>
@@ -186,16 +186,16 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vKT-cH-3y6">
-                                <rect key="frame" x="0.0" y="84" width="375" height="32"/>
+                                <rect key="frame" x="5" y="84" width="370" height="32"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OYu-yb-Q3W">
-                                        <rect key="frame" x="0.0" y="0.0" width="182.5" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="32"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o01-7p-j2B">
-                                        <rect key="frame" x="192.5" y="0.0" width="182.5" height="32"/>
+                                        <rect key="frame" x="190" y="0.0" width="180" height="32"/>
                                         <state key="normal" image="search meteo"/>
                                         <connections>
                                             <action selector="searchCountryButton:" destination="ofv-X1-4he" eventType="touchUpInside" id="Nr5-W5-57c"/>
@@ -204,7 +204,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="0.65170162671232879" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.79607843140000001" green="0.83529411760000005" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZmS-Pb-ZqZ" firstAttribute="trailing" secondItem="vKT-cH-3y6" secondAttribute="trailing" id="17R-EV-Ouo"/>
                             <constraint firstAttribute="bottom" secondItem="mdX-Im-Z1P" secondAttribute="bottom" id="AnT-VR-8cV"/>
@@ -212,7 +212,7 @@
                             <constraint firstItem="vKT-cH-3y6" firstAttribute="top" secondItem="ZmS-Pb-ZqZ" secondAttribute="top" constant="20" id="abF-ac-XfI"/>
                             <constraint firstItem="mdX-Im-Z1P" firstAttribute="leading" secondItem="ZmS-Pb-ZqZ" secondAttribute="leading" id="rDh-no-4LC"/>
                             <constraint firstAttribute="trailing" secondItem="mdX-Im-Z1P" secondAttribute="trailing" id="sl1-rd-W5H"/>
-                            <constraint firstItem="vKT-cH-3y6" firstAttribute="leading" secondItem="ZmS-Pb-ZqZ" secondAttribute="leading" id="xsx-op-s6t"/>
+                            <constraint firstItem="vKT-cH-3y6" firstAttribute="leading" secondItem="ZmS-Pb-ZqZ" secondAttribute="leading" constant="5" id="xsx-op-s6t"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZmS-Pb-ZqZ"/>
                     </view>
@@ -354,12 +354,13 @@
             <objects>
                 <tabBarController id="gUc-8A-Etk" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="wNx-MS-KM8">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="wNx-MS-KM8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="LvC-Xn-1q1" kind="relationship" relationship="viewControllers" id="ovZ-xl-6wI"/>

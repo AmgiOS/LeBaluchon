@@ -36,7 +36,7 @@ struct Temperature: Decodable {
     var text: String
 }
 
-class MeteoVar {
+class MeteoComponents {
     var countryMeteo: String
     var descriptionMeteo: String
     var dateMeteo: String

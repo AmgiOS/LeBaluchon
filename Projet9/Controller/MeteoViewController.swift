@@ -10,14 +10,15 @@ import UIKit
 
 class MeteoViewController: UIViewController, UITextFieldDelegate {
     
-    var meteoVar = [MeteoVar]()
+    private var meteoService = MeteoService()
+    var meteoVar = [MeteoComponents]()
     @IBOutlet weak var countruTextField: UITextField!
     @IBOutlet weak var meteoTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         meteoDidLoad()
-        }
+    }
     
     @IBAction func searchCountryButton(_ sender: UIButton) {
         meteoData()
@@ -28,12 +29,9 @@ extension MeteoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "meteoCell") as! MeteoViewCell
         let meteo = meteoVar[indexPath.row]
-        let celsius = convertFahreineitOnCelsius(Int(meteo.tempMeteo)!)
+//        let celsius = convertFahreineitOnCelsius(Int(meteo.tempMeteo)!)
         
-        cell.countryLabel.text = meteo.countryMeteo
-        cell.descriptionLabel.text = meteo.descriptionMeteo
-        cell.dateLabel.text = meteo.dateMeteo
-        cell.temperatureLabel.text = celsius + "°"
+       cell.meteo = meteo
         return cell
     }
 
@@ -60,7 +58,7 @@ extension MeteoViewController {
         if countrySearch.isEmpty {
             alertTextIsEmpty()
         }
-        MeteoService.shared.getMeteo(country: countrySearch) { (success, meteo) in
+        meteoService.getMeteo(country: countrySearch) { (success, meteo) in
             if success, let meteoOK = meteo {
                 let meteoVar = self.updateMeteo(meteoOK: meteoOK)
                 self.meteoVar.append(meteoVar)
@@ -71,7 +69,7 @@ extension MeteoViewController {
     }
     
     private func meteoDidLoad() {
-        MeteoService.shared.getMeteo(country: "NewYork") { (success, meteo) in
+        meteoService.getMeteo(country: "NewYork") { (success, meteo) in
             if success, let meteoOK = meteo {
                 let meteoVar = self.updateMeteo(meteoOK: meteoOK)
                 self.meteoVar.append(meteoVar)
@@ -80,8 +78,8 @@ extension MeteoViewController {
         }
     }
     
-    private func updateMeteo(meteoOK: Meteo) -> MeteoVar {
-        let meteoVar = MeteoVar(
+    private func updateMeteo(meteoOK: Meteo) -> MeteoComponents {
+        let meteoVar = MeteoComponents(
             countryMeteo: meteoOK.query.results.channel.description,
             descriptionMeteo: meteoOK.query.results.channel.item.condition.text,
             dateMeteo: meteoOK.query.results.channel.lastBuildDate,

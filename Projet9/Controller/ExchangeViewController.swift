@@ -10,6 +10,7 @@ import UIKit
 
 class ExchangeViewController: UIViewController, UITextFieldDelegate {
     
+    private let deviceService = DeviceService()
     private var viewSymbols = [String]()
     @IBOutlet weak var amoutTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
@@ -42,7 +43,7 @@ extension ExchangeViewController {
     @IBAction func exchangeButtonTapped(_ sender: UIButton) {
         guard let text = amoutTextField.text else {return}
         toggleActivityIndicator(shown: true)
-        DeviceService.shared.getDevice(Amount: text) { (success, device) in
+        deviceService.getDevice(Amount: text) { (success, device) in
             self.toggleActivityIndicator(shown: false)
             if success, let device = device {
                 self.activityIndicator.isHidden = true
@@ -70,7 +71,7 @@ extension ExchangeViewController {
     }
     
     private func updateSymbols() {
-        DeviceService.shared.getSymbols { (data) in
+        deviceService.getSymbols { (data) in
             if let data = data {
                 let array = data.sorted(by: <)
                 self.viewSymbols = array
