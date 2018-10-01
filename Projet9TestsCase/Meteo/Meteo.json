@@ -1,149 +1,50 @@
 {
     "query": {
-        "count": 1,
-        "created": "2018-09-16T21:43:23Z",
+        "count": 3,
+        "created": "2018-10-01T17:26:49Z",
         "lang": "en-US",
         "results": {
-            "channel": {
-                "units": {
-                    "distance": "mi",
-                    "pressure": "in",
-                    "speed": "mph",
-                    "temperature": "F"
-                },
-                "title": "Yahoo! Weather - Paris, Ile-de-France, FR",
-                "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-615702/",
-                "description": "Yahoo! Weather for Paris, Ile-de-France, FR",
-                "language": "en-us",
-                "lastBuildDate": "Sun, 16 Sep 2018 11:43 PM CEST",
-                "ttl": "60",
-                "location": {
-                    "city": "Paris",
-                    "country": "France",
-                    "region": " Ile-de-France"
-                },
-                "wind": {
-                    "chill": "68",
-                    "direction": "325",
-                    "speed": "7"
-                },
-                "atmosphere": {
-                    "humidity": "33",
-                    "pressure": "1013.0",
-                    "rising": "0",
-                    "visibility": "16.1"
-                },
-                "astronomy": {
-                    "sunrise": "7:29 am",
-                    "sunset": "8:0 pm"
-                },
-                "image": {
-                    "title": "Yahoo! Weather",
-                    "width": "142",
-                    "height": "18",
-                    "link": "http://weather.yahoo.com",
-                    "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
-                },
-                "item": {
-                    "title": "Conditions for Paris, Ile-de-France, FR at 11:00 PM CEST",
-                    "lat": "48.85693",
-                    "long": "2.3412",
-                    "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-615702/",
-                    "pubDate": "Sun, 16 Sep 2018 11:00 PM CEST",
-                    "condition": {
-                        "code": "26",
-                        "date": "Sun, 16 Sep 2018 11:00 PM CEST",
-                        "temp": "69",
-                        "text": "Cloudy"
+            "channel": [
+                {
+                    "location": {
+                        "city": "New York"
                     },
-                    "forecast": [
-                                 {
-                                 "code": "28",
-                                 "date": "16 Sep 2018",
-                                 "day": "Sun",
-                                 "high": "77",
-                                 "low": "55",
-                                 "text": "Mostly Cloudy"
-                                 },
-                                 {
-                                 "code": "34",
-                                 "date": "17 Sep 2018",
-                                 "day": "Mon",
-                                 "high": "84",
-                                 "low": "61",
-                                 "text": "Mostly Sunny"
-                                 },
-                                 {
-                                 "code": "34",
-                                 "date": "18 Sep 2018",
-                                 "day": "Tue",
-                                 "high": "81",
-                                 "low": "64",
-                                 "text": "Mostly Sunny"
-                                 },
-                                 {
-                                 "code": "34",
-                                 "date": "19 Sep 2018",
-                                 "day": "Wed",
-                                 "high": "80",
-                                 "low": "62",
-                                 "text": "Mostly Sunny"
-                                 },
-                                 {
-                                 "code": "30",
-                                 "date": "20 Sep 2018",
-                                 "day": "Thu",
-                                 "high": "79",
-                                 "low": "57",
-                                 "text": "Partly Cloudy"
-                                 },
-                                 {
-                                 "code": "28",
-                                 "date": "21 Sep 2018",
-                                 "day": "Fri",
-                                 "high": "67",
-                                 "low": "57",
-                                 "text": "Mostly Cloudy"
-                                 },
-                                 {
-                                 "code": "30",
-                                 "date": "22 Sep 2018",
-                                 "day": "Sat",
-                                 "high": "68",
-                                 "low": "51",
-                                 "text": "Partly Cloudy"
-                                 },
-                                 {
-                                 "code": "34",
-                                 "date": "23 Sep 2018",
-                                 "day": "Sun",
-                                 "high": "71",
-                                 "low": "51",
-                                 "text": "Mostly Sunny"
-                                 },
-                                 {
-                                 "code": "34",
-                                 "date": "24 Sep 2018",
-                                 "day": "Mon",
-                                 "high": "70",
-                                 "low": "52",
-                                 "text": "Mostly Sunny"
-                                 },
-                                 {
-                                 "code": "30",
-                                 "date": "25 Sep 2018",
-                                 "day": "Tue",
-                                 "high": "68",
-                                 "low": "51",
-                                 "text": "Partly Cloudy"
-                                 }
-                                 ],
-                    "description": "<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/26.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Cloudy\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Sun - Mostly Cloudy. High: 77Low: 55\n<BR /> Mon - Mostly Sunny. High: 84Low: 61\n<BR /> Tue - Mostly Sunny. High: 81Low: 64\n<BR /> Wed - Mostly Sunny. High: 80Low: 62\n<BR /> Thu - Partly Cloudy. High: 79Low: 57\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-615702/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n<BR />\n]]>",
-                    "guid": {
-                        "isPermaLink": "false"
+                    "item": {
+                        "condition": {
+                            "code": "28",
+                            "date": "Mon, 01 Oct 2018 12:00 PM EDT",
+                            "temp": "23",
+                            "text": "Mostly Cloudy"
+                        }
+                    }
+                },
+                {
+                    "location": {
+                        "city": "Quimper"
+                    },
+                    "item": {
+                        "condition": {
+                            "code": "26",
+                            "date": "Mon, 01 Oct 2018 06:00 PM CEST",
+                            "temp": "16",
+                            "text": "Cloudy"
+                        }
+                    }
+                },
+                {
+                    "location": {
+                        "city": "Nantes"
+                    },
+                    "item": {
+                        "condition": {
+                            "code": "34",
+                            "date": "Mon, 01 Oct 2018 06:00 PM CEST",
+                            "temp": "17",
+                            "text": "Mostly Sunny"
+                        }
                     }
                 }
-            }
+            ]
         }
     }
 }

@@ -10,14 +10,13 @@ import UIKit
 
 class MeteoViewCell: UITableViewCell {
     
-    //MARK: VARIABLES
-    var meteo: MeteoComponents? {
+    var channel: Channel? {
         didSet {
-            countryLabel.text = meteo?.countryMeteo ?? ""
-            dateLabel.text = meteo?.dateMeteo ?? ""
-            descriptionLabel.text = meteo?.descriptionMeteo ?? ""
-            if let temperature = meteo?.tempMeteo {
-              temperatureLabel.text = temperature + "°"
+            countryLabel.text = channel?.location.city ?? ""
+            dateLabel.text = channel?.item.condition.date ?? ""
+            descriptionLabel.text = channel?.item.condition.text ?? ""
+            if let temperature = channel?.item.condition.temp {
+                temperatureLabel.text = temperature + "°"
             } else {
                 temperatureLabel.text = ""
             }

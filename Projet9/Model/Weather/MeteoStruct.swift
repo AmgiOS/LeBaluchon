@@ -9,43 +9,32 @@
 import Foundation
 
 struct Meteo: Decodable {
-    var query: Results
+    let query: Query
+}
+
+struct Query: Decodable {
+    let results: Results
 }
 
 struct Results: Decodable {
-    var results: Channel
+    let channel: [Channel]
 }
 
 struct Channel: Decodable {
-    var channel: Item
+    let location: Location
+    let item: Item
+}
+
+struct Location: Decodable {
+    let city: String
 }
 
 struct Item: Decodable {
-    var description: String
-    var lastBuildDate: String
-    var item: DataItem
+    let condition: Condition
 }
 
-struct DataItem: Decodable {
-    var title: String
-    var condition: Temperature
-}
-
-struct Temperature: Decodable {
-    var temp: String
-    var text: String
-}
-
-class MeteoComponents {
-    var countryMeteo: String
-    var descriptionMeteo: String
-    var dateMeteo: String
-    var tempMeteo: String
-    
-    init(countryMeteo: String, descriptionMeteo: String, dateMeteo: String, tempMeteo: String) {
-        self.countryMeteo = countryMeteo
-        self.descriptionMeteo = descriptionMeteo
-        self.dateMeteo = dateMeteo
-        self.tempMeteo = tempMeteo
-    }
+struct Condition: Decodable {
+    let date: String
+    let temp: String
+    let text: String
 }
