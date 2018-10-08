@@ -11,7 +11,6 @@ import UIKit
 class MeteoViewController: UIViewController {
     //MARK: VARIABLES
     private var meteoService = MeteoService()
-//    var meteoComponents = [MeteoComponents]()
     var meteo: Meteo?
     var countries = ["NewYork", "Toulouse"]
     
